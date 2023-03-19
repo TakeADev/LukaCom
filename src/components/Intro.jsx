@@ -1,18 +1,22 @@
 import React from 'react'
 
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import { IntroContainer, IntroText } from '../styles/Intro'
+import { PageDisplayedContext } from '../contexts/PageDisplayedContext'
 
 function Intro() {
   const [counter, setCounter] = useState(0)
   const [introIsPlaying, setIntroIsPlaying] = useState(true)
   const [makeBig, setMakeBig] = useState(false)
 
+  const pageDisplayedContext = useContext(PageDisplayedContext)
+  const [pageDisplayed, setPageDisplayed] = pageDisplayedContext
+
   const increaseCounter = () => setCounter(counter + 1)
 
   return (
-    <div>
+    <>
       {introIsPlaying && (
         <IntroContainer>
           {counter === 0 && (
@@ -35,7 +39,7 @@ function Intro() {
           )}
         </IntroContainer>
       )}
-    </div>
+    </>
   )
 }
 
