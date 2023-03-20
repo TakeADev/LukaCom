@@ -25,3 +25,11 @@ to {
 	transform: scale(100);
 }
 `
+export const fromLeft = keyframes`
+	from {
+		margin-left: -200%;
+	}
+	to {
+		margin-left: 0;
+	}
+`

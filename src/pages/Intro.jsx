@@ -3,37 +3,34 @@ import React from 'react'
 import { useState, useContext } from 'react'
 
 import { IntroContainer, IntroText } from '../styles/IntroStyles'
-import { PageDisplayedContext } from '../contexts/PageDisplayedContext'
+import { AnimationContext } from '../contexts/AnimationContext'
 
 function Intro() {
-  const [counter, setCounter] = useState(0)
-  const [introIsPlaying, setIntroIsPlaying] = useState(true)
   const [makeBig, setMakeBig] = useState(false)
 
-  const pageDisplayedContext = useContext(PageDisplayedContext)
-  const { pageDisplayed, setPageDisplayed } = pageDisplayedContext
+  const animationContext = useContext(AnimationContext)
+  const { animationIteration, setAnimationIteration } = animationContext
 
-  const increaseCounter = () => setCounter(counter + 1)
-  const iteratePage = () => setPageDisplayed(pageDisplayed + 1)
+  const iterateAnimation = () => setAnimationIteration(animationIteration + 1)
 
   return (
     <>
-      {introIsPlaying && (
+      {animationIteration < 3 && (
         <IntroContainer>
-          {counter === 0 && (
-            <IntroText onAnimationEnd={increaseCounter}>Hello...</IntroText>
+          {animationIteration === 0 && (
+            <IntroText onAnimationEnd={iterateAnimation}>Hello...</IntroText>
           )}
-          {counter === 1 && (
-            <IntroText onAnimationEnd={increaseCounter}>
+          {animationIteration === 1 && (
+            <IntroText onAnimationEnd={iterateAnimation}>
               My name is Luka...
             </IntroText>
           )}
-          {counter === 2 && (
+          {animationIteration === 2 && (
             <IntroText
               makeBig={makeBig}
               onAnimationEnd={() => {
                 setMakeBig(true)
-                setTimeout(iteratePage, 3000)
+                setTimeout(iterateAnimation, 3000)
               }}
             >
               I am a dog...
