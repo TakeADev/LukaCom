@@ -4,21 +4,15 @@ import { useState, useContext } from 'react'
 
 import { AnimationContext } from '../contexts/AnimationContext'
 
-import {
-  HomeContainer,
-  HeroImage,
-  HeroBackground,
-  Navigation,
-  NavElement,
-  HeroText,
-  HeroContentContainer,
-} from '../styles/HomeStyles'
-import LukaComHero from '../assets/LukaComHero.png'
-import LukaWithCircle from '../assets/LukaWithCircle.png'
+import { HomeContainer } from '../styles/HomeStyles'
+import Hero from '../components/Hero'
+import NavBar from '../components/NavBar'
 
 function Home() {
   const animationContext = useContext(AnimationContext)
   const { animationIteration, setAnimationIteration } = animationContext
+  const [showNavBar, setShowNavBar] = useState(false)
+  const toggleNavBar = () => setShowNavBar(!showNavBar)
 
   const iterateAnimation = () => setAnimationIteration(animationIteration + 1)
 
@@ -26,25 +20,8 @@ function Home() {
     <>
       {animationIteration >= 3 && (
         <HomeContainer onAnimationEnd={iterateAnimation}>
-          <HeroBackground>
-            <img src={LukaComHero} />
-          </HeroBackground>
-          <HeroImage>
-            <img src={LukaWithCircle} />
-          </HeroImage>
-          <Navigation>
-            <NavElement>About Me</NavElement>
-            <NavElement>Look at Me</NavElement>
-          </Navigation>
-          <HeroContentContainer>
-            {animationIteration >= 4 && (
-              <HeroText onAnimationEnd={iterateAnimation}>I am Luka.</HeroText>
-            )}
-            {animationIteration >= 5 && (
-              <HeroText onAnimationEnd={iterateAnimation}>I am a dog.</HeroText>
-            )}
-            {animationIteration >= 6 && <button>LOOK AT ME</button>}
-          </HeroContentContainer>
+          <NavBar showNavBar={showNavBar} />
+          <Hero toggleNavBar={toggleNavBar} />
         </HomeContainer>
       )}
     </>

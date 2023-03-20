@@ -9,7 +9,7 @@ export const IntroContainer = styled.div`
 `
 
 export const IntroText = styled.h1`
-  animation: ${fadeIn} 4s ease-in,
+  animation: ${fadeIn} 3s ease-in,
     ${(props) => props.makeBig && enlarge} 10s ease-in,
     ${(props) => props.makeBig && fadeOut} 3s ease-in;
 `

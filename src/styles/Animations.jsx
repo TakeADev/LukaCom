@@ -33,3 +33,11 @@ export const fromLeft = keyframes`
 		margin-left: 0;
 	}
 `
+export const fromTop = keyframes`
+	from {
+		margin-top: -100%;	
+	}
+	to {
+		margin-top: 0;
+	}
+`
