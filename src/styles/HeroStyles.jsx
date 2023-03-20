@@ -26,6 +26,7 @@ export const HeroContentContainer = styled.div`
   margin-top: 10%;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 16%;
 
   button {
     width: 30%;
