@@ -27,6 +27,7 @@ export const HeroContentContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 16%;
+  flex-wrap: wrap;
 
   button {
     width: 30%;
@@ -36,6 +37,6 @@ export const HeroContentContainer = styled.div`
 `
 
 export const HeroText = styled.span`
-  font-size: 5rem;
+  font-size: 5em;
   animation: ${fromLeft} 3s ease-out;
 `
