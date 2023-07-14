@@ -7,3 +7,8 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   animation: ${fadeIn} 3s ease-in;
 `
+export const GalleryButton = styled.button`
+  width: 70%;
+  align-self: center;
+  margin-bottom: 5%;
+`
