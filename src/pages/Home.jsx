@@ -4,7 +4,7 @@ import { useState, useContext } from 'react'
 
 import { AnimationContext } from '../contexts/AnimationContext'
 
-import { HomeContainer } from '../styles/HomeStyles'
+import { GalleryButton, HomeContainer } from '../styles/HomeStyles'
 import Hero from '../components/Hero'
 import NavBar from '../components/NavBar'
 import AboutMe from '../components/AboutMe'
@@ -23,7 +23,12 @@ function Home() {
         <HomeContainer onAnimationEnd={iterateAnimation}>
           <NavBar showNavBar={showNavBar} />
           <Hero toggleNavBar={toggleNavBar} />
-          {animationIteration >= 7 && <AboutMe />}
+          {animationIteration >= 7 && (
+            <>
+              <AboutMe />
+              <GalleryButton>GALLERY</GalleryButton>
+            </>
+          )}
         </HomeContainer>
       )}
     </>
