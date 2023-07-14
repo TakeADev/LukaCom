@@ -5,13 +5,12 @@ import { fadeIn } from './Animations'
 export const Navigation = styled.div`
   display: flex;
   margin-left: auto;
-  margin-right: 5%;
   width: 35%;
   opacity: ${(props) => (props.showNavBar ? '100%' : '0%')};
   animation: ${(props) => props.showNavBar && fadeIn} 3s ease-out;
 `
 export const NavElement = styled.a`
-  margin-right: 15%;
+  margin-right: 10%;
   margin-top: 1.5%;
   font-size: 1.4rem;
   color: black;
