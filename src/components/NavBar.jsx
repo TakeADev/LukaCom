@@ -13,7 +13,6 @@ function NavBar({ showNavBar }) {
       <Navigation showNavBar={showNavBar}>
         <>
           <NavElement>About Me</NavElement>
-          <NavElement>About the Owner</NavElement>
           <NavButton>Look at Me</NavButton>
         </>
       </Navigation>
