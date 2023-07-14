@@ -9,10 +9,12 @@ export const AboutMeContainer = styled.div`
 
 export const AboutMeColumn = styled.div`
   width: 50%;
+  display: flex;
 `
 
-export const AboutMeText = styled.p`
+export const AboutMeText = styled.div`
   font-size: 1.5rem;
+  text-align: left;
 `
 
 export const AboutMeImage = styled.img`
